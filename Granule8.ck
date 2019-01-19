@@ -2,7 +2,7 @@
 
 // SOUND CHAIN ____________________________________________________________________________________________________________
 
-public class Granulate {
+public class Granule8 {
     // Set up SndBufs to play grains of the same file
     50 => int maxSim; // max number of simultaneous grains playing
     SndBuf bufs[maxSim];
