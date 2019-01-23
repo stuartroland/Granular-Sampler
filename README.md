@@ -4,7 +4,8 @@ A granular sampler that I designed and implemented from first principles.
 The only basic building blocks used to create this sampler were the Gain and SndBuf classes built into the ChucK language, SndBuf being a class that can read an audio file and play back a single instance of that file.
 
 ## Examples
-
+Included are a couple examples of audio files before and after being processed with the granulator. First is a hi-hat which was stretched way out to 16x the original length without being pitch shifted. Second is a recording of some crickets which was pitch shifted down by an octave and stretched to 20x its original length, making it sound more like eerie bird calls.
+Note: the same hi-hat sound can be found labeled as "example.wav" in the testing directory, along with the code to run it yourself and granulate it live. Below are instructions on how to do this or granulate any audio file you like.
 
 ## Running the Code
 #### Installing ChucK
