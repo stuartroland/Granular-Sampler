@@ -3,7 +3,7 @@
 16 => float stretchFactor;   //factor to stretch the duration by
 1.0 => float pitchShiftFactor;    //factor to pitch shift sound by
 256.0 => float gDensity;    // average grains per second
-50::ms => dur gDur;    // duration of each grain
+40::ms => dur gDur;    // duration of each grain
 
 //Audio chain________________________________________________
 //create a Granulate object, gran
@@ -15,7 +15,7 @@ gran.out => Gain master => dac;
 //instantiate gran object, set max number of simultaneous grains
 gran.buildBufs(64);
 // get path of selected audio file
-me.dir() + "example.wav" => string wavPath;
+me.dir() + soundToGranulateFN => string wavPath;
 //load file
 gran.loadFile(wavPath);
 
@@ -23,5 +23,5 @@ gran.loadFile(wavPath);
 gran.getDur() => dur wavLength;
 
 // Granulate!
-spork ~ gran.granulate(gDensity,wavLength*stretchFactor,0.25,40::ms,"gauss",pitchShiftFactor);
+spork ~ gran.granulate(gDensity,wavLength*stretchFactor,0.25,gDur,"gauss",pitchShiftFactor);
 wavLength*stretchFactor => now;
